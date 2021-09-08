@@ -20,7 +20,8 @@ class ActivityController(
     override suspend fun getNftActivities(
         request: NftActivityFilterDto,
         continuation: String?,
-        size: Int?
+        size: Int?,
+        sort: String?
     ): ResponseEntity<NftActivitiesDto> {
         val requestSize = size.limit()
         val continuationDto = ContinuationMapper.toActivityContinuationDto(continuation)
